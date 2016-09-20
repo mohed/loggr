@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Demo app</title>
+    <link rel="stylesheet" href="/styles.css" type="text/css" />
+</head>
+<body>
+<h1>Logg</h1>
+<p>
+    You have logged the following.
+</p>
+<p th:each="post : ${loggPost}" th:text="${post}"></p>
+    <!--<span th:utext="${loggPost}"/>-->
+<!--</p>-->
+<form action="logg" method="POST">
+    <label>Log something</label>
+    <div>
+        <!--<input type="text" placeholder="What do you want to logg?" name="input" />-->
+        <textarea class="textareamy" placeholder="What do you want to logg?" name="input"></textarea>
+        <input type="hidden" name="username" th:value="${username}" />
+    </div>
+    <input type="submit" />
+</form>
+</body>
+</html>
